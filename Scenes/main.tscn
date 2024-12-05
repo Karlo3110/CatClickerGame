@@ -1,0 +1,174 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci1abqd0m2u27"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ork4k"]
+[ext_resource type="Texture2D" uid="uid://crrhmb3f5yj20" path="res://Assets/Furnitures.png" id="2_6xtgv"]
+[ext_resource type="Texture2D" uid="uid://crikgawtv8v12" path="res://Assets/Room.png" id="3_nfyjo"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syahh"]
+texture = ExtResource("2_6xtgv")
+1:0/size_in_atlas = Vector2i(4, 6)
+1:0/0 = 0
+1:6/size_in_atlas = Vector2i(4, 6)
+1:6/0 = 0
+7:0/size_in_atlas = Vector2i(4, 6)
+7:0/0 = 0
+12:1/size_in_atlas = Vector2i(4, 7)
+12:1/0 = 0
+18:1/size_in_atlas = Vector2i(4, 7)
+18:1/0 = 0
+24:1/size_in_atlas = Vector2i(4, 7)
+24:1/0 = 0
+7:6/size_in_atlas = Vector2i(4, 6)
+7:6/0 = 0
+12:8/size_in_atlas = Vector2i(8, 6)
+12:8/0 = 0
+20:8/size_in_atlas = Vector2i(8, 6)
+20:8/0 = 0
+28:12/size_in_atlas = Vector2i(4, 6)
+28:12/0 = 0
+20:14/size_in_atlas = Vector2i(8, 6)
+20:14/0 = 0
+12:14/size_in_atlas = Vector2i(8, 6)
+12:14/0 = 0
+16:20/size_in_atlas = Vector2i(4, 4)
+16:20/0 = 0
+20:20/size_in_atlas = Vector2i(4, 4)
+20:20/0 = 0
+24:20/size_in_atlas = Vector2i(4, 4)
+24:20/0 = 0
+28:20/size_in_atlas = Vector2i(4, 4)
+28:20/0 = 0
+28:24/size_in_atlas = Vector2i(4, 4)
+28:24/0 = 0
+28:28/size_in_atlas = Vector2i(4, 4)
+28:28/0 = 0
+24:28/size_in_atlas = Vector2i(4, 4)
+24:28/0 = 0
+24:24/size_in_atlas = Vector2i(4, 4)
+24:24/0 = 0
+20:24/size_in_atlas = Vector2i(4, 4)
+20:24/0 = 0
+20:28/size_in_atlas = Vector2i(4, 4)
+20:28/0 = 0
+16:28/size_in_atlas = Vector2i(4, 4)
+16:28/0 = 0
+16:24/size_in_atlas = Vector2i(4, 4)
+16:24/0 = 0
+12:26/size_in_atlas = Vector2i(4, 6)
+12:26/0 = 0
+12:20/size_in_atlas = Vector2i(4, 6)
+12:20/0 = 0
+8:18/size_in_atlas = Vector2i(4, 8)
+8:18/0 = 0
+0:18/size_in_atlas = Vector2i(8, 8)
+0:18/0 = 0
+8:28/size_in_atlas = Vector2i(2, 2)
+8:28/0 = 0
+10:28/size_in_atlas = Vector2i(2, 2)
+10:28/0 = 0
+10:30/size_in_atlas = Vector2i(2, 2)
+10:30/0 = 0
+8:30/size_in_atlas = Vector2i(2, 2)
+8:30/0 = 0
+6:30/size_in_atlas = Vector2i(2, 2)
+6:30/0 = 0
+6:28/size_in_atlas = Vector2i(2, 2)
+6:28/0 = 0
+4:28/size_in_atlas = Vector2i(2, 2)
+4:28/0 = 0
+4:30/size_in_atlas = Vector2i(2, 2)
+4:30/0 = 0
+0:14/size_in_atlas = Vector2i(4, 4)
+0:14/0 = 0
+4:14/size_in_atlas = Vector2i(4, 4)
+4:14/0 = 0
+8:14/size_in_atlas = Vector2i(2, 2)
+8:14/0 = 0
+8:26/size_in_atlas = Vector2i(2, 2)
+8:26/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6yjbq"]
+texture = ExtResource("3_nfyjo")
+0:1/size_in_atlas = Vector2i(32, 28)
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_drwrp"]
+sources/1 = SubResource("TileSetAtlasSource_syahh")
+sources/2 = SubResource("TileSetAtlasSource_6yjbq")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ork4k")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 35, 0, 20, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_drwrp")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/Control"]
+offset_right = 71.0
+offset_bottom = 23.0
+text = "Money: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AutoClickersLabel" type="Label" parent="UI/Control"]
+offset_left = 732.0
+offset_top = 518.0
+offset_right = 847.0
+offset_bottom = 541.0
+text = "AutoClickers: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeClickButton" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 562.0
+offset_right = 480.0
+offset_bottom = 593.0
+text = "Upgrade Click (Cost: 25)"
+
+[node name="AutoClickerButton" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 557.0
+offset_right = 900.0
+offset_bottom = 588.0
+text = "Buy Auto Clicker (Cost: 50)"
+
+[node name="ResetGame" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 45.0
+offset_right = 1021.0
+offset_bottom = 76.0
+text = "Reset Game"
+
+[node name="AutoClickerBar" type="ProgressBar" parent="UI"]
+offset_left = 427.0
+offset_top = 57.0
+offset_right = 713.0
+offset_bottom = 84.0
+max_value = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.3
+
+[connection signal="pressed" from="UI/Control/UpgradeClickButton" to="." method="_on_upgrade_click_button_pressed"]
+[connection signal="pressed" from="UI/Control/AutoClickerButton" to="." method="_on_auto_clicker_button_pressed"]
+[connection signal="pressed" from="UI/Control/ResetGame" to="." method="_on_reset_game_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
